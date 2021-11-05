@@ -27,8 +27,6 @@ library(data.table)
 
 #################################### IMPORTANDO DADOS #############################################
 # Importando e tratando os dados
-getwd()
-setwd("C:/Users/thais/Documents/TCC")
 ## Dados sociodemográficos
 df_dados_sociodemograficos = read_excel('Dados_sociodemograficos_2.xlsx')
 df_dados_sociodemograficos = df_dados_sociodemograficos %>%
@@ -38,6 +36,7 @@ df_dados_sociodemograficos = df_dados_sociodemograficos %>%
          MEDICOS_100MIL, LEITOS_100MIL)
 
 ## Dados sobre o COVID-19
+# o arquivo 'case-brasil-cities-time pode ser encontrado em https://github.com/wcota/covid19br/blob/master/cases-brazil-cities-time.csv.gz
 df_covid19 = read_csv('cases-brazil-cities-time.csv')
 df_covid19 = df_covid19 %>%
   filter(state == 'RJ',
